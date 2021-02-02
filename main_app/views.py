@@ -1,5 +1,5 @@
 from django.shortcuts import render
-
+from .models import Toxic
 
 # Create your views here.
 
@@ -9,6 +9,6 @@ def home(request):
 def profile(request):
   return render(request, 'profile.html')
 
-
 def toxics_index(request):
+  toxics = Toxic.objects.all()
   return render(request, 'toxics/index.html', { 'toxics': toxics })

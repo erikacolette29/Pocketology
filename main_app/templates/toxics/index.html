@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Toxic Plants</h1>
+
+{% for toxic in toxics %}
+  <div class="card">
+    <div class="card-content">
+      <span class="card-title">{{ toxic.name }}</span>
+      <p>Description: {{ toxic.description }}</p>
+      <p>Fun Fact: {{ toxic.funfact }}</p>
+     
+    </div>
+  </div>
+{% endfor %}
+
+{% endblock %}
