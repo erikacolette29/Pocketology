@@ -12,3 +12,7 @@ def profile(request):
 def toxics_index(request):
   toxics = Toxic.objects.all()
   return render(request, 'toxics/index.html', { 'toxics': toxics })
+
+def toxics_detail(request, toxic_id):
+  toxic = Toxic.objects.get(id=toxic_id)
+  return render(request, 'toxics/detail.html', { 'toxic': toxic })
