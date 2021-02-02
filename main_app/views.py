@@ -8,3 +8,7 @@ def home(request):
 
 def profile(request):
   return render(request, 'profile.html')
+
+
+def toxics_index(request):
+  return render(request, 'toxics/index.html', { 'toxics': toxics })
