@@ -9,7 +9,10 @@
     <p>Description: {{ toxic.description }}</p>
     <p>funfact: {{ toxic.funfact }}</p>
     
-   
+  </div>
+  <div class="card-action">
+    <a href="{% url 'toxics_update' toxic.id %}">Edit</a>
+    <a href="{% url 'toxics_delete' toxic.id %}">Delete</a>
   </div>
 </div>
 
