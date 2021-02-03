@@ -15,5 +15,11 @@
       {{ form.as_table }}
     </table>
     <input type="submit" value="Submit!" class="btn">
+
   </form>
+  <script>
+    // initialize the meal select
+    var selectEl = document.getElementById('id_howtoxic');
+    M.FormSelect.init(selectEl);
+  </script>
 {% endblock %}
