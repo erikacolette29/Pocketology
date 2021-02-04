@@ -2,54 +2,79 @@
 {% block content %}
 
 
-
 <div class="card">
-  <div class="card-content">
-    <h2 >{{ toxic.name }} Details</h2>
-    <h5>Description:</h5>
-    <p>{{ toxic.description }}</p>
-    <h5>Fun Fact:</h5>
-    <p>{{ toxic.funfact }}</p>
-    <h5>Toxic Level:</h5>
-    <p>{{toxic.howtoxic}}</p>
+  <div class="card-body">
+    <div class="page-title-contianer">
+        <h2 >{{ toxic.name }} Details</h2>
+    </div>
+    
+    <div class="details-main-container">
 
+   
+    
+    <div class="detail-photo-container">
     {% for photo in toxic.photo_set.all %}
         <img class="img-thumbnail" src="{{photo.url}}">
     {% empty %}
         <div class="card-panel teal-text center-align">No Photos Uploaded</div>
     {% endfor %}
 
+    <div class="detail-upload-container">
     <form action="{% url 'add_photo' toxic.id %}" enctype="multipart/form-data" method="POST" class="card-panel">
         {% csrf_token %}
         <input type="file" name="photo-file">
         <br><br>
         <input type="submit" class="btn btn-light" value="Upload Photo">
     </form>
+    </div>
+
+    </div>
+
+    <div class="detail-info-container">
+        <h5>Description:</h5>
+        <p>{{ toxic.description }}</p>
+        <h5>Fun Fact:</h5>
+        <p>{{ toxic.funfact }}</p>
+        <h5>Toxic Level:</h5>
+    <p>{{toxic.howtoxic}}</p>
+    </div>
+
+</div>
 
 
+<div class="comments-container">
     <h5>Comments:</h5>
     {% if toxic.ratings.count %}
         {% for rating in toxic.ratings.all %}
-            <p>Comments: {{ rating.comments}}</p>
+            <p>{{ rating.comments}}</p>
         {% endfor %}
     {% else %}
         <p>{{ toxic.name}} has no comments yet.</p>
     {% endif %}
-</div>
+
 
     <div class="col s6">
     <!-- new code below -->
         <form action="{% url 'add_rating' toxic.id %}" method="post">
             {% csrf_token %}
             {{ rating_form.as_p }}
-            <input type="submit" class="btn" value="Add Comment">
+            <input type="submit" class="btn btn-light" value="Add Comment">
         </form>
     </div>
 
-    <div class="card-action">
-        <a href="{% url 'toxics_update' toxic.id %}">Edit</a>
-        <a href="{% url 'toxics_delete' toxic.id %}">Delete</a>
-
 </div>
 
+<div class="edit-delete-container">
+    <div class=edit-btn>
+    <a href="{% url 'toxics_update' toxic.id %}">Edit</a>
+    </div>
+
+    <a href="{% url 'toxics_delete' toxic.id %}">Delete</a>
+</div>
+</div>
+ 
+
+
+
+</div>
 {% endblock %}

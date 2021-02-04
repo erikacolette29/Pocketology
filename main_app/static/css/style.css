@@ -57,6 +57,7 @@ height: 100vh;
   color:rgb(123, 165, 107);
   font-size: 5rem;
   font-weight: 500;
+ 
   
 }
 
@@ -82,4 +83,69 @@ height: 100vh;
 .box{
   height: 500px;
   width: 300px;
+}
+
+
+/*  details page */
+
+.details-main-container{
+  display: flex;
+flex-flow: row nowrap;
+;
+/* background-color: purple; */
+}
+
+
+
+.detail-photo-container{
+   display: flex;
+  justify-content: center;
+  align-items: center; 
+  flex-flow: column wrap;
+  text-align: center;
+  width:  fit-content;
+  margin-top: 30px
+  /* background-color: red; */
+}
+
+.detail-upload-container{
+  display: flex;
+  justify-content: center; 
+  margin: 20px;
+  /* background-color: yellow; */
+}
+
+
+.detail-info-container{
+   display: flex;
+  justify-content: center;
+  align-items:flex-start;
+  flex-flow: column wrap; 
+  width: 50%;
+  /* background-color: blue; */
+
+}
+
+.comments-container{
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-flow: column wrap;
+  /* background-color: green; */
+  padding-right: 100px;
+  text-align: left;
+  margin: 50px;
+ 
+}
+
+.edit-delete-container{
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  flex-flow: row;
+/* background-color: aquamarine; */
+}
+
+.edit-btn{
+  margin-right: 10px;
 }
