@@ -27,3 +27,11 @@ class Toxic(models.Model):
     def get_absolute_url(self):
         return reverse('detail', kwargs={'toxic_id': self.id})
 
+
+class Rating(models.Model):
+    comments = models.TextField(max_length=250)
+
+    toxic = models.ForeignKey(Toxic, on_delete=models.CASCADE)
+
+    def __str__(self):
+     return self.name
