@@ -29,7 +29,7 @@ class Toxic(models.Model):
 
 
 class Rating(models.Model):
-    comments = models.TextField(max_length=250)
+    comments = models.CharField(max_length=250)
 
     toxic = models.ForeignKey(Toxic, on_delete=models.CASCADE)
 

@@ -94,8 +94,8 @@ height: 100vh;
 .details-main-container{
   display: flex;
 flex-flow: row nowrap;
-;
-background-color: purple;
+
+/* background-color: purple; */
 }
 
 
@@ -108,14 +108,14 @@ background-color: purple;
   text-align: center;
   width:  fit-content;
   margin-top: 30px;
-  background-color: red;
+  /* background-color: red; */
 }
 
 .detail-upload-container{
   display: flex;
   justify-content: center; 
   margin: 20px;
-  background-color: yellow;
+  /* background-color: yellow; */
 }
 
 
@@ -125,18 +125,18 @@ background-color: purple;
   align-items:flex-start;
   flex-flow: column wrap; 
   width: 50%;
-  background-color: blue;
+  /* background-color: blue; */
 
 }
 
 .comments-container{
   display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
+  justify-content: center;
+  align-items: center;
   flex-flow: column wrap;
-  background-color: green;
+  /* background-color: green; */
   padding-right: 100px;
-  text-align: left;
+  text-align: center;
   margin: 30px;
  
 }
@@ -146,7 +146,7 @@ background-color: purple;
   justify-content: flex-end;
   align-items: flex-end;
   flex-flow: row;
-  background-color: aquamarine;
+  /* background-color: aquamarine; */
 }
 
 .edit-btn{
@@ -163,10 +163,10 @@ background-color: purple;
 }
 
 .comments{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: aqua;
+  /* background-color: aqua; */
+  margin-top: 50px;
+  width: fit-content;
+  border-bottom: 2px rgb(214, 212, 212) solid;
 }
 
 /* ADD AND EDIT FORM */
