@@ -125,6 +125,8 @@ flex-flow: row nowrap;
   align-items:flex-start;
   flex-flow: column wrap; 
   width: 50%;
+  margin-left: 50px;
+  margin-bottom: 50px;
   /* background-color: blue; */
 
 }
@@ -135,9 +137,9 @@ flex-flow: row nowrap;
   align-items: center;
   flex-flow: column wrap;
   /* background-color: green; */
-  padding-right: 100px;
+  padding: 100px;
   text-align: center;
-  margin: 30px;
+  border: 2px solid rgba(185, 185, 185, 0.582);
  
 }
 
