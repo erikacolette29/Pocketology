@@ -17,6 +17,9 @@ body {
    
   }
 
+form{
+
+  }
 
 a {
   text-decoration: none;
@@ -92,7 +95,7 @@ height: 100vh;
   display: flex;
 flex-flow: row nowrap;
 ;
-/* background-color: purple; */
+background-color: purple;
 }
 
 
@@ -104,25 +107,25 @@ flex-flow: row nowrap;
   flex-flow: column wrap;
   text-align: center;
   width:  fit-content;
-  margin-top: 30px
-  /* background-color: red; */
+  margin-top: 30px;
+  background-color: red;
 }
 
 .detail-upload-container{
   display: flex;
   justify-content: center; 
   margin: 20px;
-  /* background-color: yellow; */
+  background-color: yellow;
 }
 
 
 .detail-info-container{
-   display: flex;
+  display: flex;
   justify-content: center;
   align-items:flex-start;
   flex-flow: column wrap; 
   width: 50%;
-  /* background-color: blue; */
+  background-color: blue;
 
 }
 
@@ -131,10 +134,10 @@ flex-flow: row nowrap;
   justify-content: flex-start;
   align-items: flex-start;
   flex-flow: column wrap;
-  /* background-color: green; */
+  background-color: green;
   padding-right: 100px;
   text-align: left;
-  margin: 50px;
+  margin: 30px;
  
 }
 
@@ -143,8 +146,7 @@ flex-flow: row nowrap;
   justify-content: flex-end;
   align-items: flex-end;
   flex-flow: row;
-
-/* background-color: aquamarine; */
+  background-color: aquamarine;
 }
 
 .edit-btn{
@@ -152,9 +154,20 @@ flex-flow: row nowrap;
   
 }
 
+.choose-file{
+ margin: 0;
+}
 
+.upload-btn{
+  margin: 0;
+}
 
-
+.comments{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: aqua;
+}
 
 /* ADD AND EDIT FORM */
 
@@ -162,7 +175,21 @@ flex-flow: row nowrap;
   display: flex;
   justify-content: center;
   align-items: center;
-  /* background-color: blue; */
+  background-color: blue;
   border: none;
   text-align: center;
+
 }
+
+
+table{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Spartan', sans-serif;
+  flex-flow: column;
+}
+table > th{
+
+}
+

@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic import ListView, DetailView
-from .models import Toxic, Photo
+from .models import Toxic, Photo, Rating
 from .forms import RatingForm
 import uuid
 import boto3
@@ -28,8 +28,9 @@ def toxics_index(request): #objects.get.all(), make not private
 @login_required
 def toxics_detail(request, toxic_id):
   toxic = Toxic.objects.get(id=toxic_id)
+  comment = Rating.objects.filter(toxic=toxic_id)
   rating_form = RatingForm()
-  return render(request, 'toxics/detail.html', { 'toxic': toxic, 'rating_form': rating_form })
+  return render(request, 'toxics/detail.html', { 'toxic': toxic, 'rating_form': rating_form, 'comment': comment })
 
 
 @login_required
