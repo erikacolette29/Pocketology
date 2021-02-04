@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import Toxic
+from .forms import RatingForm
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
@@ -15,18 +16,33 @@ def profile(request):
   return render(request, 'profile.html')
 
 @login_required
-def toxics_index(request):
-  toxics = Toxic.objects.all()
+def toxics_index(request): #objects.get.all(), make not private
+  toxics = Toxic.objects.filter(user=request.user)
   return render(request, 'toxics/index.html', { 'toxics': toxics })
 
 @login_required
 def toxics_detail(request, toxic_id):
   toxic = Toxic.objects.get(id=toxic_id)
-  return render(request, 'toxics/detail.html', { 'toxic': toxic })
+  rating_form = RatingForm()
+  return render(request, 'toxics/detail.html', { 'toxic': toxic, 'rating_form': rating_form })
+
+
+@login_required
+def add_rating(request, toxic_id):
+  form = RatingForm(request.POST)
+  # validate the form
+  if form.is_valid():
+    # don't save the form to the db until it
+    # has the cat_id assigned
+    new_rating = form.save(commit=False)
+    new_rating.toxic_id = toxic_id
+    new_rating.save()
+  return redirect('detail', toxic_id=toxic_id)
+
 
 class ToxicCreate(LoginRequiredMixin, CreateView):
   model = Toxic
-  fields = '__all__'
+  fields = ['name', 'description', 'funfact', 'howtoxic']
   def form_valid(self, form):
     form.instance.user = self.request.user
     return super().form_valid(form)
