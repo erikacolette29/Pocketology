@@ -1,16 +1,24 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h1>Toxic Plants</h1>
+<div class="page-title-contianer">
+<h1 class="page-title">Toxic Plants</h1>
+</div>
 
+<div class="list-container">
 {% for toxic in toxics %}
-  <div class="card">
+<div class="card box" style="width: 18rem;">
     <a href="{% url 'detail' toxic.id %}">
-    <div class="card-content">
-      <span class="card-title">{{ toxic.name }}</span>
-     
+    {% for photo in toxic.photo_set.all %}
+        <img class="card-img-top" src="{{photo.url}}">
+    {% empty %}
+        <div class=""></div>
+    {% endfor %}
+    <div class="card-body">
+      <p class="card-text">{{ toxic.name }}</p>
     </div>
   </div>
-{% endfor %}
+  {% endfor %}
 
+</div>
 {% endblock %}

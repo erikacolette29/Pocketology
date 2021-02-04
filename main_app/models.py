@@ -35,3 +35,12 @@ class Rating(models.Model):
 
     def __str__(self):
      return self.name
+
+
+
+class Photo(models.Model):
+    url = models.CharField(max_length=200)
+    toxic = models.ForeignKey(Toxic, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return f"Photo for toxic_id: {self.toxic_id} @{self.url}"

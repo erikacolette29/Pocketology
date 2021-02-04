@@ -13,6 +13,20 @@
     <h5>Toxic Level:</h5>
     <p>{{toxic.howtoxic}}</p>
 
+    {% for photo in toxic.photo_set.all %}
+        <img class="img-thumbnail" src="{{photo.url}}">
+    {% empty %}
+        <div class="card-panel teal-text center-align">No Photos Uploaded</div>
+    {% endfor %}
+
+    <form action="{% url 'add_photo' toxic.id %}" enctype="multipart/form-data" method="POST" class="card-panel">
+        {% csrf_token %}
+        <input type="file" name="photo-file">
+        <br><br>
+        <input type="submit" class="btn btn-light" value="Upload Photo">
+    </form>
+
+
     <h5>Comments:</h5>
     {% if toxic.ratings.count %}
         {% for rating in toxic.ratings.all %}
