@@ -143,9 +143,26 @@ flex-flow: row nowrap;
   justify-content: flex-end;
   align-items: flex-end;
   flex-flow: row;
+
 /* background-color: aquamarine; */
 }
 
 .edit-btn{
   margin-right: 10px;
+  
+}
+
+
+
+
+
+/* ADD AND EDIT FORM */
+
+.add-edit-page-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: blue; */
+  border: none;
+  text-align: center;
 }
