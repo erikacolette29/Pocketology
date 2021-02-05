@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h1>Addon List</h1>
+<h1>Supply List</h1>
 
 {% for addon in addon_list %}
   <a href="{% url 'addons_detail' addon.id %}">

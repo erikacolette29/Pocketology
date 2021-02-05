@@ -87,7 +87,7 @@ class HerbCreate(LoginRequiredMixin, CreateView):
 class HerbUpdate(LoginRequiredMixin, UpdateView):
   model = Herb
   # Let's disallow the renaming of a cat by excluding the name field!
-  fields = ['description']
+  fields = ['name', 'description']
 
 class HerbDelete(LoginRequiredMixin, DeleteView):
   model = Herb
