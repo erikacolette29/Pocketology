@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Addon List</h1>
+
+{% for addon in addon_list %}
+  <a href="{% url 'addons_detail' addon.id %}">
+    <div class="card">
+        <div class="card-content">
+            <span class="card-title">{{ addon.name }}</span>
+            <p>Color: {{ addon.color }}</p>
+        </div>
+    </div>
+  </a>
+{% endfor %}
+
+{% endblock %}

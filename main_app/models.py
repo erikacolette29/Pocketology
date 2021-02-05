@@ -51,10 +51,23 @@ class Photo(models.Model):
 
 
 
+class Addon(models.Model):
+  name = models.CharField(max_length=50)
+  color = models.CharField(max_length=20)
+  description = models.CharField(max_length=20)
+
+  def __str__(self):
+    return self.name
+
+  def get_absolute_url(self):
+    return reverse('addons_detail', kwargs={'pk': self.id})
+
+
 class Herb(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     name = models.CharField(max_length=100)
     description = models.TextField(max_length=250)
+    addons = models.ManyToManyField(Addon)
    
 
     def __str__(self):

@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic import ListView, DetailView
-from .models import Toxic, Photo, Rating, Herb
+from .models import Toxic, Photo, Rating, Herb, Addon
 from .forms import RatingForm
 import uuid
 import boto3
@@ -33,7 +33,8 @@ def herbs_index(request): #objects.get.all(), make not private
 @login_required
 def herbs_detail(request, herb_id):
   herb = Herb.objects.get(id=herb_id)
-  return render(request, 'herbs/detail.html', { 'herb': herb})  
+  addons_herb_doesnt_have = Addon.objects.exclude(id__in = herb.addons.all().values_list('id'))
+  return render(request, 'herbs/detail.html', { 'herb': herb, 'addons': addons_herb_doesnt_have})  
 
 @login_required
 def toxics_detail(request, toxic_id):
@@ -91,6 +92,30 @@ class HerbUpdate(LoginRequiredMixin, UpdateView):
 class HerbDelete(LoginRequiredMixin, DeleteView):
   model = Herb
   success_url = '/herbs/'
+
+class AddonList(LoginRequiredMixin, ListView):
+  model = Addon
+
+class AddonDetail(LoginRequiredMixin, DetailView):
+  model = Addon
+
+class AddonCreate(LoginRequiredMixin, CreateView):
+  model = Addon
+  fields = '__all__'
+
+class AddonUpdate(LoginRequiredMixin, UpdateView):
+  model = Addon
+  fields = ['name', 'color', 'description']
+
+class AddonDelete(LoginRequiredMixin, DeleteView):
+  model = Addon
+  success_url = '/addons/'
+
+@login_required
+def assoc_addon(request, herb_id, addon_id):
+  # Note that you can pass a toy's id instead of the whole object
+  Herb.objects.get(id=herb_id).addons.add(addon_id)
+  return redirect('detail_herbs', herb_id=herb_id)
 
 def add_photo(request, toxic_id):
     # photo-file will be the "name" attribute on the <input type="file">
