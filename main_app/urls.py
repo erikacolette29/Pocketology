@@ -16,4 +16,6 @@ path('accounts/signup/', views.signup, name='signup'),
 path('herbs/', views.herbs_index, name='index_herbs'),
 path('herbs/<int:herb_id>/', views.herbs_detail, name='detail_herbs'),
 path('herbs/create/', views.HerbCreate.as_view(), name='herbs_create'),
+path('herbs/<int:pk>/update/', views.HerbUpdate.as_view(), name='herbs_update'),
+path('herbs/<int:pk>/delete/', views.HerbDelete.as_view(), name='herbs_delete'),
 ]

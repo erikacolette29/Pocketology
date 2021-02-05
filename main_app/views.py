@@ -83,6 +83,15 @@ class HerbCreate(LoginRequiredMixin, CreateView):
     form.instance.user = self.request.user
     return super().form_valid(form)
 
+class HerbUpdate(LoginRequiredMixin, UpdateView):
+  model = Herb
+  # Let's disallow the renaming of a cat by excluding the name field!
+  fields = ['description']
+
+class HerbDelete(LoginRequiredMixin, DeleteView):
+  model = Herb
+  success_url = '/herbs/'
+
 def add_photo(request, toxic_id):
     # photo-file will be the "name" attribute on the <input type="file">
     photo_file = request.FILES.get('photo-file', None)

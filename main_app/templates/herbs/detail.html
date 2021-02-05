@@ -8,6 +8,10 @@
     <span class="card-title">{{ herb.name }}</span>
     <p>Description: {{ herb.description }}</p>
   </div>
+  <div class="card-action">
+    <a href="{% url 'herbs_update' herb.id %}">Edit</a>
+    <a href="{% url 'herbs_delete' herb.id %}">Delete</a>
+  </div>
 </div>
 
 {% endblock %}
