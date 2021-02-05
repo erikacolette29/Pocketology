@@ -67,6 +67,7 @@
         {% for comment in comment.all %}
         <div class="comments">
             <p>{{ comment.comments}}</p>
+            <a href="{% url 'ratings_delete' comment.id %}">Delete</a>
         </div>
         {% endfor %}
     {% else %}

@@ -63,6 +63,12 @@ class ToxicDelete(LoginRequiredMixin, DeleteView):
   success_url = '/toxics/'
 
 
+class RatingDelete(LoginRequiredMixin, DeleteView):
+  model = Rating
+  success_url = '/toxics/'
+
+
+
 def add_photo(request, toxic_id):
     # photo-file will be the "name" attribute on the <input type="file">
     photo_file = request.FILES.get('photo-file', None)

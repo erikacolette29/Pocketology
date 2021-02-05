@@ -10,6 +10,10 @@ path('toxics/create/', views.ToxicCreate.as_view(), name='toxics_create'),
 path('toxics/<int:pk>/update/', views.ToxicUpdate.as_view(), name='toxics_update'),
 path('toxics/<int:pk>/delete/', views.ToxicDelete.as_view(), name='toxics_delete'),
 path('toxics/<int:toxic_id>/add_rating/', views.add_rating, name='add_rating'),
+
+path('ratings/<int:pk>/delete/', views.RatingDelete.as_view(), name='ratings_delete'),
+
+
 path('toxics/<int:toxic_id>/add_photo/', views.add_photo, name='add_photo'),
 path('accounts/signup/', views.signup, name='signup'),
 ]

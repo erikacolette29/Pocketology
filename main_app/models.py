@@ -36,6 +36,9 @@ class Rating(models.Model):
     def __str__(self):
      return self.comments
 
+    def get_absolute_url(self):
+        return reverse('index', kwargs={'toxic_id': self.id})
+     
 
 
 class Photo(models.Model):

@@ -177,7 +177,7 @@ flex-flow: row nowrap;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: blue;
+  /* background-color: blue; */
   border: none;
   text-align: center;
 
