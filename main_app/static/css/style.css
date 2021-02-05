@@ -17,10 +17,6 @@ body {
    
   }
 
-form{
-
-  }
-
 a {
   text-decoration: none;
   color: rgb(126, 103, 70);
@@ -43,6 +39,9 @@ img{
 }
 
 
+
+/* login page */
+
 /* HOME PAGE */
 .home-title-container{
 display: flex;
@@ -53,15 +52,12 @@ flex-flow: row wrap;
 height: 100vh;
 /* background-color: rgb(0, 0, 0); */
 
-
 }
 
 .home-title{
   color:rgb(123, 165, 107);
   font-size: 5rem;
   font-weight: 500;
- 
-  
 }
 
 .home-subheading{
@@ -94,10 +90,8 @@ height: 100vh;
 .details-main-container{
   display: flex;
 flex-flow: row nowrap;
-
 /* background-color: purple; */
 }
-
 
 
 .detail-photo-container{
@@ -180,18 +174,8 @@ flex-flow: row nowrap;
   /* background-color: blue; */
   border: none;
   text-align: center;
-
 }
 
 
-table{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: 'Spartan', sans-serif;
-  flex-flow: column;
-}
-table > th{
 
-}
 

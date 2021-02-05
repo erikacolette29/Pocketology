@@ -38,8 +38,6 @@ def add_rating(request, toxic_id):
   form = RatingForm(request.POST)
   # validate the form
   if form.is_valid():
-    # don't save the form to the db until it
-    # has the cat_id assigned
     new_rating = form.save(commit=False)
     new_rating.toxic_id = toxic_id
     new_rating.save()

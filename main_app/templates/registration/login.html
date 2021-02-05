@@ -1,14 +1,18 @@
 {% extends 'base.html' %}
 {% block content %}
-
+<div class="page-title-contianer">
 <h1>Log In</h1>
+</div>
 
-<!-- Add the login form -->
-<form method="post" action="{% url 'login' %}">
+<div class="add-edit-page-container">
+
+<form class="form-control" method="post" action="{% url 'login' %}">
   {% csrf_token %}
   {{ form.as_p }}
-  <input type="submit" class="btn" value="login">
+  <input type="submit" class="btn btn-light" value="login">
   <input type="hidden" name="next" value="{{ next }}">
 </form>
+
+</div>
 
 {% endblock %}
