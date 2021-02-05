@@ -47,3 +47,19 @@ class Photo(models.Model):
 
     def __str__(self):
         return f"Photo for toxic_id: {self.toxic_id} @{self.url}"
+
+
+
+
+class Herb(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    name = models.CharField(max_length=100)
+    description = models.TextField(max_length=250)
+   
+
+    def __str__(self):
+        return self.name
+
+
+    def get_absolute_url(self):
+        return reverse('detail_herbs', kwargs={'herb_id': self.id})

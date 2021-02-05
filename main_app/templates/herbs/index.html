@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="page-title-contianer">
+<h1>Herbs List</h1>
+</div>
+
+{% for herb in herbs %}
+<a href="{% url 'detail_herbs' herb.id %}">
+  <div class="card">
+    <div class="card-content">
+      <span class="card-title">{{ herb.name }}</span>
+      <p>Description: {{ herb.description }}</p>
+    </div>
+  </div>
+{% endfor %}
+
+{% endblock %}

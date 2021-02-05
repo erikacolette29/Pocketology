@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic import ListView, DetailView
-from .models import Toxic, Photo, Rating
+from .models import Toxic, Photo, Rating, Herb
 from .forms import RatingForm
 import uuid
 import boto3
@@ -24,6 +24,16 @@ def profile(request):
 def toxics_index(request): #objects.get.all(), make not private
   toxics = Toxic.objects.filter(user=request.user)
   return render(request, 'toxics/index.html', { 'toxics': toxics })
+
+@login_required
+def herbs_index(request): #objects.get.all(), make not private
+  herbs = Herb.objects.filter(user=request.user)
+  return render(request, 'herbs/index.html', { 'herbs': herbs })
+
+@login_required
+def herbs_detail(request, herb_id):
+  herb = Herb.objects.get(id=herb_id)
+  return render(request, 'herbs/detail.html', { 'herb': herb})  
 
 @login_required
 def toxics_detail(request, toxic_id):
@@ -66,6 +76,12 @@ class RatingDelete(LoginRequiredMixin, DeleteView):
   success_url = '/toxics/'
 
 
+class HerbCreate(LoginRequiredMixin, CreateView):
+  model = Herb
+  fields = ['name', 'description']
+  def form_valid(self, form):
+    form.instance.user = self.request.user
+    return super().form_valid(form)
 
 def add_photo(request, toxic_id):
     # photo-file will be the "name" attribute on the <input type="file">

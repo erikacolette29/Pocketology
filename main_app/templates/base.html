@@ -37,6 +37,12 @@
               <a class="nav-link" href="{% url 'index' %}">View All Toxic Plants</a>
             </li>
             <li class="nav-item">
+              <a class="nav-link" href="{% url 'index_herbs' %}">View All Herbs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'herbs_create' %}">Add a Herb</a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link" href="{% url 'logout' %}">Log Out</a>
             </li>
             {% else %}
