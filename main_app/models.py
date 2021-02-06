@@ -13,8 +13,8 @@ HOWTOXIC = (
 class Toxic(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     name = models.CharField(max_length=100)
-    description = models.TextField(max_length=250)
-    funfact = models.TextField(max_length=250)
+    description = models.CharField(max_length=250)
+    funfact = models.CharField(max_length=100)
     howtoxic = models.CharField(max_length=15,
         choices=HOWTOXIC,
         default=HOWTOXIC[0][0],
@@ -66,7 +66,7 @@ class Addon(models.Model):
 class Herb(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     name = models.CharField(max_length=100)
-    description = models.TextField(max_length=250)
+    description = models.CharField(max_length=250)
     addons = models.ManyToManyField(Addon)
    
 
