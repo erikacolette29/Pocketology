@@ -1,77 +1,74 @@
 body {
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
-    background-color: rgb(255, 255, 255);
-    font-family: 'Spartan', sans-serif;
-  }
-  
-  main {
-    flex: 1 0 auto;
-  }
-  
-  footer.page-footer {
-    padding-top: 0;
-    text-align: right;
-    font-size: .5rem;
-   
-  }
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  background-color: rgb(255, 255, 255);
+  font-family: "Spartan", sans-serif;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+footer.page-footer {
+  padding-top: 0;
+  text-align: right;
+  font-size: 0.5rem;
+}
 
 a {
   text-decoration: none;
   color: rgb(126, 103, 70);
 }
-a:hover{
+a:hover {
   color: rgb(190, 150, 74);
 }
 
-img{
+img {
   height: 400px;
   width: 300px;
 }
 
-.page-title-contianer{
+.page-title-contianer {
   display: flex;
   justify-content: center;
   margin: 50px;
-  font-family: 'Spartan', sans-serif;
+  font-family: "Spartan", sans-serif;
   color: rgb(68, 59, 4);
 }
-
-
 
 /* login page */
 
 /* HOME PAGE */
-.home-title-container{
-display: flex;
-justify-content: center;
-align-items: center;
-flex-flow: row wrap;
-/* background-color: black; */
-height: 100vh;
-/* background-color: rgb(0, 0, 0); */
-
+.home-title-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: row wrap;
+  /* background-color: black; */
+  height: 100vh;
+  /* background-color: rgb(0, 0, 0); */
 }
 
-.home-title{
-  color:rgb(123, 165, 107);
+.home-title {
+  color: rgb(123, 165, 107);
   font-size: 5rem;
   font-weight: 500;
+  margin: 0;
+  padding: 0;
 }
 
-.home-subheading{
+.home-subheading {
   margin: 20px;
-  color:rgb(190, 150, 74)
+  color: rgb(190, 150, 74);
 }
-
 
 /*  list toxic plants page */
 
-.list-container{
+.list-container {
   display: flex;
   justify-content: center;
-  align-items: center; 
+  align-items: center;
   flex-flow: row wrap;
   gap: 20px 10px;
   padding: 20px;
@@ -79,56 +76,49 @@ height: 100vh;
   text-align: center;
 }
 
-.box{
+.box {
   height: 500px;
   width: 300px;
 }
 
-
 /*  details page */
 
-.details-main-container{
+.details-main-container {
   display: flex;
-flex-flow: row nowrap;
-/* background-color: purple; */
+  flex-flow: row nowrap;
+  /* background-color: purple; */
 }
 
-
-
-.detail-photo-container{
+.detail-photo-container {
   display: flex;
   justify-content: center;
-  align-items: center; 
+  align-items: center;
   flex-flow: column wrap;
   text-align: center;
-  width:  fit-content;
+  width: fit-content;
   margin-top: 30px;
   /* background-color: red; */
 }
 
-.detail-upload-container{
+.detail-upload-container {
   display: flex;
-  justify-content: center; 
+  justify-content: center;
   margin: 20px;
   /* background-color: yellow; */
 }
 
-
-.detail-info-container{
+.detail-info-container {
   display: flex;
   justify-content: center;
-  align-items:flex-start;
-  flex-flow: column wrap; 
+  align-items: flex-start;
+  flex-flow: column wrap;
   width: 50%;
   margin-left: 50px;
   margin-bottom: 50px;
   /* background-color: blue; */
-
 }
 
-
-
-.comments-container{
+.comments-container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -137,10 +127,9 @@ flex-flow: row nowrap;
   padding: 100px;
   text-align: center;
   border: 2px solid rgba(185, 185, 185, 0.582);
- 
 }
 
-.edit-delete-container{
+.edit-delete-container {
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
@@ -149,14 +138,13 @@ flex-flow: row nowrap;
 }
 
 /* supply details page */
-.detail-supply-container{
+.detail-supply-container {
   display: flex;
   justify-content: center;
   align-items: center;
-
 }
 
-.edit-delete-container2{
+.edit-delete-container2 {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -164,20 +152,19 @@ flex-flow: row nowrap;
   /* background-color: aquamarine; */
 }
 
-.edit-btn{
+.edit-btn {
   margin-right: 10px;
-  
 }
 
-.choose-file{
- margin: 0;
-}
-
-.upload-btn{
+.choose-file {
   margin: 0;
 }
 
-.comments{
+.upload-btn {
+  margin: 0;
+}
+
+.comments {
   /* background-color: aqua; */
   margin-top: 50px;
   width: fit-content;
@@ -186,18 +173,95 @@ flex-flow: row nowrap;
 
 /* ADD AND EDIT FORM */
 
-.add-edit-page-container{
+.add-edit-page-container {
   display: flex;
   justify-content: center;
   align-items: center;
   /* background-color: blue; */
   border: none;
   text-align: center;
+}
 
+/* herb detail page */
+@media only screen and (min-width: 1426px) {
+/* animation */
+.ball-container{
+  display: flex;
+  justify-content: flex-start;
+
+
+}
+.ball {
+  margin-left: 80px;
+  background-color: green;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  animation: bounce 3s infinite;
+}
+
+@keyframes bounce {
+  10% {
+    height: 50px;
+    width: 50px;
+  }
+  30% {
+    height: 50px;
+    width: 40px;
+  }
+  50% {
+    height: 30px;
+    width: 57px;
+    transform: translateY(460px);
+  }
+  75% {
+    height: 50px;
+    width: 57px;
+  }
+  100%{
+    transform: translateY(0px);
+  }
 }
 
 
+}
+
+@media only screen and (max-width: 1024px){
+  .home-title-container {
+    flex-flow: column wrap;
+  }
+  .home-subheading{
+    font-size: 2rem;
+  }
+}
 
 
-/* herb detail page */
+@media only screen and (max-width: 768px){
 
+  .home-title{
+    font-size: 3rem;
+  }
+  .home-title-container {
+    flex-flow: column wrap;
+  }
+  .home-subheading{
+    font-size: 1rem;
+  }
+}
+@media only screen and (max-width: 415px){
+
+  .home-title{
+    font-size: 2rem;
+    padding: 10px;
+  }
+  .home-subheading{
+    font-size: .8rem;
+  }
+}
+@media only screen and (max-width: 300px){
+
+  .home-title{
+    font-size: 1.5rem;
+    padding: 10px;
+  }
+}
