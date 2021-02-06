@@ -8,6 +8,31 @@
     <span class="card-title">{{ herb.name }}</span>
     <p>Description: {{ herb.description }}</p>
   </div>
+
+  <div class="detail-photo-container">
+    {% for photo in herb.herbphoto_set.all %}
+        <img class="img-thumbnail" src="{{photo.url}}">
+    {% empty %}
+        <div class="">No Photos Uploaded</div>
+    {% endfor %}
+
+    <div class="detail-upload-container">
+    <form action="{% url 'addherb_photo' herb.id %}" enctype="multipart/form-data" method="POST" class="card-panel">
+
+        {% csrf_token %}
+        <input  class="form-control choose-file" type="file" name="photo-file">
+        <br><br>
+        <input type="submit" class="btn btn-light upload-btn" value="Upload Photo">
+    </form>
+    </div>
+
+    </div>
+
+
+
+
+
+
   <div class="card-action">
     <a href="{% url 'herbs_update' herb.id %}">Edit</a>
     <a href="{% url 'herbs_delete' herb.id %}">Delete</a>

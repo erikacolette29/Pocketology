@@ -76,3 +76,12 @@ class Herb(models.Model):
 
     def get_absolute_url(self):
         return reverse('detail_herbs', kwargs={'herb_id': self.id})
+
+
+
+class HerbPhoto(models.Model):
+    url = models.CharField(max_length=200)
+    herb = models.ForeignKey(Herb, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return f"Photo for herb_id: {self.herb_id} @{self.url}"
