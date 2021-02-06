@@ -1,14 +1,17 @@
 {% extends 'base.html' %}
 {% block content %}
 
+<div class="page-title-contianer">
 <h1>Supply List</h1>
+</div>
 
 {% for addon in addon_list %}
   <a href="{% url 'addons_detail' addon.id %}">
     <div class="card">
-        <div class="card-content">
-            <span class="card-title">{{ addon.name }}</span>
-            <p>Color: {{ addon.color }}</p>
+        <div class="card-body">
+            <span class="card-title">
+                <span style="color: {{ addon.color }}">{{ addon.color }}</span> {{ addon.name }}
+             </span>
         </div>
     </div>
   </a>

@@ -94,8 +94,9 @@ flex-flow: row nowrap;
 }
 
 
+
 .detail-photo-container{
-   display: flex;
+  display: flex;
   justify-content: center;
   align-items: center; 
   flex-flow: column wrap;
@@ -125,6 +126,8 @@ flex-flow: row nowrap;
 
 }
 
+
+
 .comments-container{
   display: flex;
   justify-content: center;
@@ -141,6 +144,22 @@ flex-flow: row nowrap;
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
+  flex-flow: row;
+  /* background-color: aquamarine; */
+}
+
+/* supply details page */
+.detail-supply-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.edit-delete-container2{
+  display: flex;
+  justify-content: center;
+  align-items: center;
   flex-flow: row;
   /* background-color: aquamarine; */
 }

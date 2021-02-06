@@ -1,21 +1,33 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h1>{{addon.name}} Details</h1>
+<div class="card-body">
 
-<div class="row">
-  <div class="col s6 col-offset-3">
-    <div class="card">
-      <div class="card-content">
-        <span class="card-title">{{ addon.name }}</span>
-        <p>Color: {{ addon.color }}</p>
-        <p>Description: {{ addon.description}}</p>
-      </div>
-      <div class="card-action">
+<div class="page-title-contianer">
+<h1>{{addon.name}} Details</h1>
+</div>
+
+
+
+
+<div class="detail-supply-container">
+        <span class="card-title">
+          <span style="color: {{ addon.color }}">{{ addon.color }}</span> {{ addon.name }}
+       </span>
+        <p>Uses: {{ addon.description}}</p>
+      
+
+
+      <div class="edit-delete-container2">
+      
         <a href="{% url 'addons_update' addon.id %}">Edit</a>
+      
         <a href="{% url 'addons_delete' addon.id %}">Delete</a>
-      </div>
     </div>
   </div>
+
+
 </div>
+
+
 {% endblock %}
