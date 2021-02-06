@@ -10,7 +10,7 @@
   <div class="card box" style="width: 18rem;">
     <a href="{% url 'detail_herbs' herb.id %}">
     {% for photo in herb.herbphoto_set.all %}
-        <img class="img-thumbnail" src="{{photo.url}}">
+        <img class="card-img-top" src="{{photo.url}}">
     {% empty %}
         <div class=""></div>
     {% endfor %}

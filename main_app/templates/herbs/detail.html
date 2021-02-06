@@ -1,42 +1,51 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h1>Herb Details</h1>
 
 <div class="card">
-  <div class="card-content">
-    <span class="card-title">{{ herb.name }}</span>
-    <p>Description: {{ herb.description }}</p>
-  </div>
+    <div class="card-body">
+      <div class="page-title-contianer">
+          <h2 >{{ herb.name }} Details</h2>
+      </div>
 
-  <div class="detail-photo-container">
+<div class="details-main-container">
+
+<div class="detail-photo-container">
     {% for photo in herb.herbphoto_set.all %}
-        <img class="img-thumbnail" src="{{photo.url}}">
+         <img class="img-thumbnail" src="{{photo.url}}">
     {% empty %}
         <div class="">No Photos Uploaded</div>
     {% endfor %}
 
-    <div class="detail-upload-container">
+ <div class="detail-upload-container">
     <form action="{% url 'addherb_photo' herb.id %}" enctype="multipart/form-data" method="POST" class="card-panel">
-
-        {% csrf_token %}
-        <input  class="form-control choose-file" type="file" name="photo-file">
-        <br><br>
-        <input type="submit" class="btn btn-light upload-btn" value="Upload Photo">
+    
+            {% csrf_token %}
+            <input  class="form-control choose-file" type="file" name="photo-file">
+            <br><br>
+            <input type="submit" class="btn btn-light upload-btn" value="Upload Photo">
     </form>
+</div>
+</div>
+
+<div class="detail-info-container">
+    <h5>Description:</h5>
+    <p>{{ herb.description }}</p>
+
+    <div class="edit-delete-container">
+        <div class=edit-btn>
+        <a href="{% url 'herbs_update' herb.id %}">Edit</a>
+        </div>
+        <a href="{% url 'herbs_delete' herb.id %}">Delete</a>
     </div>
-
     </div>
+</div>
+</div>
 
 
 
 
-
-
-  <div class="card-action">
-    <a href="{% url 'herbs_update' herb.id %}">Edit</a>
-    <a href="{% url 'herbs_delete' herb.id %}">Delete</a>
-  </div>
+ 
 
 <hr>
 <div class="row">
