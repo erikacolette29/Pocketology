@@ -30,24 +30,25 @@
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="{% url 'profile' %}">Profile</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'toxics_create' %}">Add a Toxic Plant</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'index' %}">View All Toxic Plants</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'herbs_create' %}">Add a Herb</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'index_herbs' %}">View All Herbs</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'addons_create' %}">Add a Supply</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'addons_index' %}">View All Supplies</a>
-            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Toxic Plants</a>
+              <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="{% url 'index' %}">View All Toxic Plants</a></li>
+              <li><a class="dropdown-item" href="{% url 'toxics_create' %}">Add a Toxic Plant</a></li>
+            </ul>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Herbs</a>
+              <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="{% url 'index_herbs' %}">View All Herbs</a></li>
+              <li><a class="dropdown-item" href="{% url 'herbs_create' %}">Add a Herb</a></li>
+            </ul>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Supplies</a>
+              <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="{% url 'addons_index' %}">View All Supplies</a></li>
+              <li><a class="dropdown-item"href="{% url 'addons_create' %}">Add a Supply</a></li>
+            </ul>
+
             <li class="nav-item">
               <a class="nav-link" href="{% url 'logout' %}">Log Out</a>
             </li>
