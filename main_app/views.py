@@ -17,10 +17,6 @@ def home(request):
   return render(request, 'home.html')
 
 @login_required
-def profile(request):
-  return render(request, 'profile.html')
-
-@login_required
 def toxics_index(request): #objects.get.all(), make not private
   toxics = Toxic.objects.filter(user=request.user)
   return render(request, 'toxics/index.html', { 'toxics': toxics })
