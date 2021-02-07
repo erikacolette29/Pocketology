@@ -26,7 +26,8 @@ class Toxic(models.Model):
 
     def get_absolute_url(self):
         return reverse('detail', kwargs={'toxic_id': self.id})
-
+    class Meta: 
+        ordering = ['id']
 
 class Rating(models.Model):
     comments = models.CharField(max_length=250)

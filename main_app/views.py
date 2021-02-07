@@ -17,13 +17,15 @@ def home(request):
   return render(request, 'home.html')
 
 @login_required
-def toxics_index(request): #objects.get.all(), make not private
-  toxics = Toxic.objects.filter(user=request.user)
+def toxics_index(request):
+  # Toxic.objects.filter(user=request.user) // only user can see
+  toxics = Toxic.objects.all()
   return render(request, 'toxics/index.html', { 'toxics': toxics })
 
 @login_required
-def herbs_index(request): #objects.get.all(), make not private
-  herbs = Herb.objects.filter(user=request.user)
+def herbs_index(request): #Herb.objects.all(), make not private
+  # Herb.objects.filter(user=request.user)
+  herbs = Herb.objects.all()
   return render(request, 'herbs/index.html', { 'herbs': herbs })
 
 @login_required
