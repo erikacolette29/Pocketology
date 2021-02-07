@@ -38,10 +38,12 @@
 
     <div class="edit-delete-container">
         <div class=edit-btn>
-        <a href="{% url 'toxics_update' toxic.id %}">Edit</a>
+        {% if user == toxic.user %}
+         <a href="{% url 'toxics_update' toxic.id %}">Edit</a>
         </div>
     
         <a href="{% url 'toxics_delete' toxic.id %}">Delete</a>
+        {% endif %}
     </div>
     </div>
 
@@ -65,7 +67,9 @@
         {% for comment in comment.all %}
         <div class="comments">
             <p>{{ comment.comments}}</p>
+          
             <a href="{% url 'ratings_delete' comment.id %}">Delete</a>
+          
         </div>
         {% endfor %}
     {% else %}

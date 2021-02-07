@@ -33,10 +33,13 @@
     <p>{{ herb.description }}</p>
 
     <div class="edit-delete-container">
+        {% if user == herb.user %}
         <div class=edit-btn>
         <a href="{% url 'herbs_update' herb.id %}">Edit</a>
         </div>
+       
         <a href="{% url 'herbs_delete' herb.id %}">Delete</a>
+        {% endif %}
     </div>
     </div>
 </div>
