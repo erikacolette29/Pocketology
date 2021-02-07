@@ -9,6 +9,7 @@ Trello board: https://trello.com/b/D1I4otmu/pocket-botanical
 ## Screenshots
 
 ### Wireframes
+![wireframe](static/../main_app/static/images/wireframe.png)
 
 ### Toxic Plant Collection
 
