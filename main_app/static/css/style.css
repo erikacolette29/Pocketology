@@ -184,23 +184,23 @@ img {
 }
 
 /* herb detail page */
-@media only screen and (min-width: 1426px) {
+/* @media only screen and (min-width: 1426px) { */
 /* animation */
-.ball-container{
+/* .ball-container{
   display: flex;
   justify-content: flex-start;
 
 
-}
-.ball {
+} */
+/* .ball {
   margin-left: 80px;
   background-color: green;
   height: 50px;
   width: 50px;
   border-radius: 50%;
   animation: bounce 3s infinite;
-}
-
+} */
+/* 
 @keyframes bounce {
   10% {
     height: 50px;
@@ -222,10 +222,10 @@ img {
   100%{
     transform: translateY(0px);
   }
-}
+} */
 
 
-}
+/* } */
 
 @media only screen and (max-width: 1024px){
   .home-title-container {
