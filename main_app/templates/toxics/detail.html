@@ -67,9 +67,9 @@
         {% for comment in comment.all %}
         <div class="comments">
             <p>{{ comment.comments}}</p>
-          
+          {% if user == toxic.user %}
             <a href="{% url 'ratings_delete' comment.id %}">Delete</a>
-          
+          {% endif %}
         </div>
         {% endfor %}
     {% else %}
