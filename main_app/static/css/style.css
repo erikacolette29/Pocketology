@@ -37,8 +37,6 @@ img {
   color: rgb(68, 59, 4);
 }
 
-/* login page */
-
 /* HOME PAGE */
 .home-title-container {
   display: flex;
@@ -47,9 +45,7 @@ img {
   flex-flow: row wrap;
   /* background-color: black; */
   height: 100vh;
-  /* background-color: rgb(0, 0, 0); */
 }
-
 .home-title {
   color: rgb(123, 165, 107);
   font-size: 5rem;
@@ -57,14 +53,12 @@ img {
   margin: 0;
   padding: 0;
 }
-
 .home-subheading {
   margin: 20px;
   color: rgb(190, 150, 74);
 }
 
 /*  list toxic plants page */
-
 .list-container {
   display: flex;
   justify-content: center;
@@ -75,14 +69,12 @@ img {
   /* background-color: black; */
   text-align: center;
 }
-
 .box {
   height: 500px;
   width: 300px;
 }
 
 /*  details page */
-
 .details-main-container {
   display: flex;
   flex-flow: row nowrap;
@@ -173,7 +165,6 @@ img {
 }
 
 /* ADD AND EDIT FORM */
-
 .add-edit-page-container {
   display: flex;
   justify-content: center;
@@ -183,7 +174,7 @@ img {
   text-align: center;
 }
 
-/* herb detail page */
+
 /* @media only screen and (min-width: 1426px) { */
 /* animation */
 /* .ball-container{
@@ -224,7 +215,6 @@ img {
   }
 } */
 
-
 /* } */
 /* 
 @media only screen and (min-width: 900px) and (max-width: 1079px){
@@ -237,88 +227,89 @@ img {
   
 } */
 
+@media (max-width: 500px) {
+  body {
 
-@media only screen and (min-width: 500px) and (max-width: 768px){
+  }
+}
 
-  .home-title{
+@media only screen and (max-width: 768px) {
+  .home-title {
     font-size: 3rem;
   }
   .home-title-container {
-    flex-flow: row wrap !important;
+    flex-flow: column wrap !important;
   }
-  .home-subheading{
+  .home-subheading {
     font-size: 1rem;
   }
-  .details-main-container{
+  .details-main-container {
     flex-flow: column wrap;
   }
-  .detail-info-container{
+  .detail-info-container {
     margin-top: 30px;
     width: auto;
   }
-  .comments-container{
+  .comments-container {
     justify-content: center;
     align-items: center;
     padding: 20px 0 10px;
     margin-bottom: 30px;
   }
- .comments{
+  .comments {
     width: 50%;
   }
 }
-@media only screen and (max-width: 415px){
-
-  .home-title{
+@media only screen and (max-width: 415px) {
+  .home-title {
     font-size: 2rem;
     padding: 10px;
   }
-  .home-subheading{
-    font-size: .8rem;
+  .home-subheading {
+    font-size: 0.8rem;
   }
-  .details-main-container{
+  .details-main-container {
     flex-flow: column wrap;
   }
-  .detail-info-container{
+  .detail-info-container {
     margin-top: 30px;
     width: auto;
   }
-  .comments-container{
+  .comments-container {
     justify-content: center;
     align-items: center;
     padding: 20px 0 10px;
     margin-bottom: 30px;
   }
- .comments{
+  .comments {
     width: 50%;
   }
-  .page-title-text{
+  .page-title-text {
     font-size: 1.5rem;
   }
-  
 }
-@media only screen and (max-width: 300px){
-
-  .home-title{
+@media only screen and (max-width: 300) {
+  .home-title {
     font-size: 1.5rem;
     padding: 10px;
   }
-  .details-main-container{
+  .details-main-container {
     flex-flow: column wrap;
   }
-  .detail-info-container{
+  .detail-info-container {
     margin-top: 30px;
     width: auto;
   }
-  .comments-container{
+  .comments-container {
     justify-content: center;
     align-items: center;
     padding: 20px 0 10px;
     margin-bottom: 30px;
   }
- .comments{
+  .comments {
     width: 50%;
   }
-  .page-title-text{
+  .page-title-text {
     font-size: 1.5rem;
   }
 }
