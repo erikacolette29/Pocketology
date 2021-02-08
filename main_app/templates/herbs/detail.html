@@ -86,7 +86,9 @@
           <div class="card-action">
             <form action="{% url 'assoc_addon' herb.id addon.id %}" method="post">
               {% csrf_token %}
+              
               <button type="submit" class="btn btn-light">Add</button>
+             
             </form>
           </div>
         </div>

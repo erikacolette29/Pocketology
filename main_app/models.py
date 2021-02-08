@@ -31,7 +31,7 @@ class Toxic(models.Model):
 
 class Rating(models.Model):
     comments = models.CharField(max_length=250)
-
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     toxic = models.ForeignKey(Toxic, on_delete=models.CASCADE)
 
     def __str__(self):
