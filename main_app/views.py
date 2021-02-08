@@ -101,6 +101,7 @@ class AddonDetail(LoginRequiredMixin, DetailView):
 class AddonCreate(LoginRequiredMixin, CreateView):
   model = Addon
   fields = '__all__'
+ 
 
 class AddonUpdate(LoginRequiredMixin, UpdateView):
   model = Addon
