@@ -1,6 +1,6 @@
 # Pocketology
 
-Build your own personal apothecary cabinet with Pocketology! Create a collection of your favorite toxic plants, herbs, and supplies. Upload your own photos and watch as your cabinet grows! 
+Build your own personal apothecary cabinet with Pocketology! Create a collection of your favorite toxic plants, herbs, and uses. Upload your own photos and watch as your cabinet grows! 
 
 Heroku: https://pocketologyapp.herokuapp.com/
 
