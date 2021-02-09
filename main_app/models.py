@@ -55,7 +55,7 @@ class Photo(models.Model):
 class Addon(models.Model):
   name = models.CharField(max_length=50)
   color = models.CharField(max_length=20)
-  description = models.CharField(max_length=100)
+  description = models.CharField(max_length=250)
   user = models.ForeignKey(User, on_delete=models.CASCADE)
 
   def __str__(self):
