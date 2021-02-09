@@ -2,7 +2,7 @@
 
 Build your own personal apothecary cabinet with Pocketology! Create a collection of your favorite toxic plants, herbs, and supplies. Upload your own photos and watch as your cabinet grows! 
 
-Heroku: 
+Heroku: https://pocketologyapp.herokuapp.com/
 
 Trello board: https://trello.com/b/D1I4otmu/pocket-botanical
 
