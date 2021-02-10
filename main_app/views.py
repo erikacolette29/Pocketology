@@ -11,7 +11,6 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 S3_BASE_URL = 'https://s3.us-east-1.amazonaws.com/'
 BUCKET = 'catcollector29'
-# Create your views here.
 
 def home(request):
   return render(request, 'home.html')
@@ -63,7 +62,6 @@ class ToxicCreate(LoginRequiredMixin, CreateView):
 
 class ToxicUpdate(LoginRequiredMixin, UpdateView):
   model = Toxic
-  # Let's disallow the renaming of a cat by excluding the name field!
   fields = ['description', 'funfact', 'howtoxic']
 
 class ToxicDelete(LoginRequiredMixin, DeleteView):
@@ -85,7 +83,6 @@ class HerbCreate(LoginRequiredMixin, CreateView):
 
 class HerbUpdate(LoginRequiredMixin, UpdateView):
   model = Herb
-  # Let's disallow the renaming of a cat by excluding the name field!
   fields = ['name', 'description']
 
 class HerbDelete(LoginRequiredMixin, DeleteView):
@@ -113,23 +110,20 @@ class AddonDelete(LoginRequiredMixin, DeleteView):
 
 @login_required
 def assoc_addon(request, herb_id, addon_id):
-  # Note that you can pass a toy's id instead of the whole object
   Herb.objects.get(id=herb_id).addons.add(addon_id)
   return redirect('detail_herbs', herb_id=herb_id)
 
 def add_photo(request, toxic_id):
-    # photo-file will be the "name" attribute on the <input type="file">
     photo_file = request.FILES.get('photo-file', None)
     if photo_file:
         s3 = boto3.client('s3')
-        # need a unique "key" for S3 / needs image file extension too
         key = uuid.uuid4().hex[:6] + photo_file.name[photo_file.name.rfind('.'):]
-        # just in case something goes wrong
+       
         try:
             s3.upload_fileobj(photo_file, BUCKET, key)
-            # build the full url string
+            
             url = f"{S3_BASE_URL}{BUCKET}/{key}"
-            # we can assign to cat_id or cat (if you have a cat object)
+           
             photo = Photo(url=url, toxic_id=toxic_id)
             photo.save()
         except:
@@ -139,18 +133,18 @@ def add_photo(request, toxic_id):
 
 
 def addherb_photo(request, herb_id):
-    # photo-file will be the "name" attribute on the <input type="file">
+   
     photo_file = request.FILES.get('photo-file', None)
     if photo_file:
         s3 = boto3.client('s3')
-        # need a unique "key" for S3 / needs image file extension too
+        
         key = uuid.uuid4().hex[:6] + photo_file.name[photo_file.name.rfind('.'):]
-        # just in case something goes wrong
+        
         try:
             s3.upload_fileobj(photo_file, BUCKET, key)
-            # build the full url string
+            
             url = f"{S3_BASE_URL}{BUCKET}/{key}"
-            # we can assign to cat_id or cat (if you have a cat object)
+            
             photo = HerbPhoto(url=url, herb_id=herb_id)
             photo.save()
         except:

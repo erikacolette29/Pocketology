@@ -55,7 +55,7 @@
 <div class="comments-container">
     
         <div class="col s6">
-        <!-- new code below -->
+       
             <form action="{% url 'add_rating' toxic.id %}" method="post">
                 {% csrf_token %}
                 {{ rating_form.as_p }}
